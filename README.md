@@ -14,7 +14,7 @@ npm install
 
 ## Usage
 
-init
+Start web server:
 ````bash
 npm run start
 ````
