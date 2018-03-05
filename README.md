@@ -1,4 +1,4 @@
-# Node.JS Weather App
+# Node.JS Web Server
 
 Study project.
 
