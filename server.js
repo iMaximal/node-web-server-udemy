@@ -2,18 +2,21 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
-hbs.registerPartials(__dirname + '/views/partials')
+hbs.registerPartials(`${__dirname}/views/partials`)
 app.set('view engine', 'hbs')
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(`${__dirname}/public`))
 
-hbs.registerHelper('getCurrentYear', () => {
-  return new Date().getFullYear()
+app.use((req, res, next) => {
+  const now = new Date().toString()
+
+  console.log(`${now}: ${req.method} ${req.url}`)
+  next()
 })
 
-hbs.registerHelper('screamIt', (text) => {
-  return text.toUpperCase()
-})
+hbs.registerHelper('getCurrentYear', () => new Date().getFullYear())
+
+hbs.registerHelper('screamIt', (text) => text.toUpperCase())
 
 app.get('/', (req, res) => {
   res.render('home.hbs', {
