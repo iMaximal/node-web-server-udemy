@@ -14,6 +14,6 @@ npm install
 
 init
 ````bash
-not ready
+npm run start
 ````
 
