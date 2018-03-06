@@ -19,3 +19,9 @@ Start web server:
 npm run start
 ````
 
+## For future
+````bash
+heroku login
+heroku keys:add
+heroku create
+````
