@@ -24,4 +24,5 @@ npm run start
 heroku login
 heroku keys:add
 heroku create
+git push heroku
 ````
